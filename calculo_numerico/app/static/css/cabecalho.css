@@ -1,0 +1,100 @@
+.Cabecalho {
+  display: block;
+  
+}
+
+.fundoinicial {
+  display: block;
+  font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+  color: rgba(255, 255, 255, 0.877);
+  padding: 0px;
+  margin: 0px;
+
+
+  text-align: center;
+  align-items: center;
+  height: auto;
+  max-width: 100%;
+  width: 100%;
+  margin-top: 15px;
+
+  border-radius: 2px;
+  background-image:url('../img/971.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: repeat;
+}
+.nomes {
+  margin-top: 30px;
+}
+.fundoinicial h1 {
+  margin: 2px;
+  margin-top: 5px;
+  width: auto;
+  max-width: auto;
+  margin-left: 15px;
+}
+.fundoinicial h2 {
+  margin-top: 25px;
+  color: rgb(241, 241, 241);
+}
+.alunos{
+  margin-top: 15px;
+  text-align: justify;
+  color: aliceblue;
+  font-family: 'Times New Roman', Times, serif;
+  font-size: 1.4rem;
+}
+
+.aux-ufc{
+  display: grid;
+  grid-template-columns: 20% 80%;
+
+}
+.aux-ufc img{
+  grid-column: 1;
+  border-radius: 40px;
+
+}
+
+.titulo {
+  grid-column: 2;
+  font-size: 3.1rem;
+  max-width: 100%;
+  width: 100%;
+  height: auto;
+  display: flex;
+  text-align: center;
+  align-items: center;
+
+}
+
+.menu {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between; /* Distribui as tags <a> uniformemente ao longo do 
+  contêiner */
+  align-items: center;
+  font-weight: bold;
+  padding: 2px;
+  margin: 0px;
+  margin-top: 20px;
+
+}
+
+
+@media (max-width: 500px ) {
+  .titulo {
+    font-size: 2rem;
+  }
+  .Cabecalho h2{
+    font-size: 1.2rem;
+    margin: 5px;
+    margin-top: 20px;
+  }
+  .alunos{
+    margin-top: 10px;
+    font-size: 1rem;
+  }
+  
+}

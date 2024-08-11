@@ -1,0 +1,288 @@
+
+.indented {
+  text-align: justify;
+  text-indent: 40px; /* O valor pode ser ajustado para o tamanho desejado */
+}
+
+.resultados{
+  background-color: rgb(0, 54, 155);
+  text-align: center;
+  display: grid;
+  grid-template-columns: 30% 18% 26% 26%;
+  grid-template-rows: 35px auto auto auto;
+  margin: 10px;
+  border: solid gray 3px;
+  border-radius: 10px;
+  padding-left: 30px;
+}
+.item-g {
+  border: solid gray 3px;
+  border-radius: 10px;
+  background-color: rgb(0, 54, 155);
+  padding: 4px;
+  margin-top: 35px;
+  margin-bottom: 150px;
+  gap: 5px;
+}
+.item-g p{
+  font-size: 1.1rem;
+  text-align: center;
+  margin-top: 10px;
+}
+.item form{
+  margin-top: 15px;
+}
+.item-g label{
+  font-size: 1.4rem;
+}
+.item-g input{
+  font-size: 1.4rem;
+}
+.item-g button{
+  text-align: center;
+  font-size: 1.2rem;
+  color: aqua;
+  background-color: rgb(0, 0, 73);
+  border: solid gray;
+  border-radius: 20px;
+  padding: 5px;
+}
+.item-g button:hover {
+  background-color: aqua;
+  color: black;
+}
+
+.resultados h3{
+  width: auto;
+  grid-row: 1;
+  grid-column: 2/3;
+  margin-left: 45%;
+  font-size: 1.3rem;
+  padding: 6px;
+  border-radius: 12px 20px;
+  margin-right: 2px;
+}
+.resultados h4{
+  margin: 5px;
+}
+.resultados p {
+  font-size: 1.4rem;
+  margin-bottom: 15px;
+}
+.r1, .r2, .r3, .r4{
+  grid-row: 2/-1;
+}
+.r1{
+  grid-column: 1;
+}
+.r2{
+  grid-column: 2;
+}
+.r3{
+  grid-column: 3
+}
+.r4{
+  grid-column: 4;
+}
+/****INTRODUÇÂO********/
+
+.principal_introducao {
+  display: grid;
+  margin: 20px;
+  grid-template-columns: 50% 50%;
+}
+/*  Quem Somos?   */
+.quem-somos {
+  display: grid;
+  gap: 0px; /* Espaçamento entre as colunas */
+  padding: 0px;
+  grid-template-columns: 60% 36% 3% ;
+  grid-template-rows: auto auto auto;
+  max-height: 1200px;
+  max-width:  1200px;
+  margin: 0px;
+}
+
+
+.apresentacao-equipe-img li img{
+  margin: 0px;
+  height: auto;
+  border-radius: 2px 2px;
+  grid-row: 1;
+  grid-column: 1;
+}
+.apresentacao-equipe-img li{
+  display: block;
+  grid-row: 1/2;
+  grid-column: 1/2;
+  width: 100%;
+  height: auto;
+  margin: 0px;
+  
+
+}
+
+.quem-somos button{
+  margin: 0px;
+  border-radius: 0px 40px 40px 0px;
+  grid-column: 3;
+  grid-row: 1/2;
+  height: 100%;
+  background-color: white;
+  opacity: 0.9;
+  color: rgb(9, 177, 45);
+  font-size: 2.2rem;
+
+}
+.quem-somos button:hover {
+  background-color: rgb(110, 223, 135);
+}
+.apresentacao-equipe-text {
+  grid-row: 1;
+  grid-column: 2;
+  width: 90%;
+  margin-left: 25px;
+}
+.apresentacao-equipe-text section{
+  margin-left: 2px;
+  height: auto;
+  grid-row: 2;
+  grid-column: 2;
+}
+.apresentacao-equipe-text h2{
+  margin-top: 30%;
+  display: inline-flex;
+  margin-left: -8px;
+  color: rgb(255, 255, 255);
+  font-size: 3rem;
+}
+
+.ativo {
+  display: block;
+}
+
+.apresentacao-equipe-text section,
+.apresentacao-equipe-img li{
+  display: none;
+}
+
+.apresentacao-equipe-text section.ativo,
+.apresentacao-equipe-img li.ativo{
+  display: block !important;
+  animation: show 1s forwards !important;
+}
+
+
+@keyframes show {
+  from {
+    opacity: 0;
+    transform: translate3d(-30px, 0, 0);
+  }
+  to {
+    opacity: 1;
+    transform: translate3d(0, 0, 0);
+  }
+}
+
+article h2{
+  margin-top: 20px;
+}
+
+@media (max-width: 500px ) {
+  body {
+    margin: 0px;
+    padding: 0px;
+  }
+  .quem-somos {
+   grid-template-columns: 92% 4% !important;
+   grid-template-rows: auto 40px;
+
+  }
+  .apresentacao-equipe-img li{
+    width: 100%;
+    max-width: 500px;
+    grid-row: 1;
+    grid-column: 1 !important;
+
+  }
+  .apresentacao-equipe-img li img{
+    margin-left: 4px;
+    grid-row: 1;
+    grid-column: 1 !important;
+    width: 500px;
+
+  }
+  
+  .apresentacao-equipe-text {
+    margin-left: 20px;
+    width: 100%;
+    grid-row: 2;
+    grid-column: 1/2;
+  }
+  .apresentacao-equipe-text h2{
+  font-size: 1.45rem;
+  margin-top: 5px;
+  }
+
+  .intro-p{
+    font-size: 1.2rem !important;
+    margin-top: 10px;
+    grid-row: 2;
+
+  }
+  .intro-text h2, 
+  .profissao{
+    font-size: 2rem;
+  }
+  .resultados {
+    background-color: rgb(18, 91, 139);
+    grid-template-rows: auto auto auto;
+    margin: 2px;
+    margin-bottom: 20px;
+  }
+  .resultados p{
+    font-size: 0.9rem;
+    grid-row: 3/-1;
+    grid-column: 1/1;
+  }
+  .resultados h4{
+    font-size: 1rem;
+    grid-row: 2;
+  }
+  .resultados h3{
+    background-color: none;
+
+    padding: 2px;
+    font-size: 1.2rem;
+  }
+  .r1, .r2{
+    margin-top: 15px;
+  }
+  .item-g p,
+  .item-g b {
+    font-size: 0.6 !important;
+  }
+  .item-g h2{
+    font-size: 1.1rem;
+    text-align: justify;
+  }
+  .item-g{
+    background-color: rgb(18, 91, 139);
+
+  }
+  .item-g label, .item-g input, .item-g button{
+    font-size: 1.05rem;
+  }
+  .indented h2{
+    font-size: 1.25rem;
+    margin-top: 8px;
+  }
+  .indented p {
+    font-size: .9rem;
+  }
+}
+
+
+  
+
+
