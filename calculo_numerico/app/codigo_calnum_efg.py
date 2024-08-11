@@ -1,10 +1,11 @@
-import numpy as np
-import matplotlib.pyplot as plt
-import pandas as pd
-import time
-import codigo_calnum as abcd
-import os 
+
 def mega_funcao(C, lista_c):
+  import numpy as np
+  import matplotlib.pyplot as plt
+  import pandas as pd
+  import time
+  import codigo_calnum as abcd
+  import os 
 
 
   #e) Fornecer um quadro resposta, com Q calculado para cada método dado (comparando resposta, acurácia(erro), tempo, número de iterações etc).
@@ -116,15 +117,22 @@ def mega_funcao(C, lista_c):
   h = 0.01
 
   intervalos = []
+  aux_____123 = 0
   Resultados_isolamento = ""
   for C in C_values:
     intervalos.append(abcd.isolamento_analitico(C, Q0, h))
     if len(intervalos[-1]) == 0:
       #print('Não a troca de sinal')
-      Resultados_isolamento = Resultados_isolamento+'- Não a troca de sinal\n' 
+      # Resultados_isolamento = Resultados_isolamento+'- Não a troca de sinal\n' 
     else:
       #print(intervalos[-1])
-      Resultados_isolamento = Resultados_isolamento+" - "+str(intervalos[-1])+"\n" 
+      Resultados_isolamento = Resultados_isolamento+" - Existe troca de Sinal em "+str(intervalos[-1])+"\n" 
+      aux_____123 = 1
+  if  aux_____123 == 0:
+    Resultados_isolamento = Resultados_isolamento+'- Não houve troca de sinal\n' 
+    
+    
+    
   #print(Resultados_isolamento )
   # Comparação dos métodos
   resultados = []
