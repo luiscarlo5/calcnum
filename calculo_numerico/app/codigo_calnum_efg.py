@@ -122,7 +122,8 @@ def mega_funcao(C, lista_c):
   for C in C_values:
     intervalos.append(abcd.isolamento_analitico(C, Q0, h))
     if len(intervalos[-1]) == 0:
-      #print('Não a troca de sinal')
+      
+      print('Não a troca de sinal')
       # Resultados_isolamento = Resultados_isolamento+'- Não a troca de sinal\n' 
     else:
       #print(intervalos[-1])
