@@ -135,7 +135,11 @@
   <form method="POST" action="{{ url_for('index') }}"> <!-- NOME DA FUNÇÃO  -essa url é para a rota que pega os valores de post e get  -->
     <label for="num_c">Digite o número de valores de C:</label>
     <input type="number" name="num_c" min="1" required>
-    <button type="submit">Enviar o númwro de valores de C<sub>n</sub></button>
+    <br> 
+    <label for="tol_c">Digite a tolerância:</label>
+    <input type="number" name="tol_c" min="0" step="0.00000001" required>
+    <br> 
+    <button type="submit">Enviar o número de valores de C<sub>n</sub></button>
   </form>
   </div>
 
