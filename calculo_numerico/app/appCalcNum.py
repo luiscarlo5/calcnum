@@ -7,19 +7,24 @@ app.secret_key = 'supersecretkey_calc_num'  # Necessário para usar sessões
 def index():
   if request.method == 'POST':
     num_c = request.form.get('num_c')
+    tol_c = request.form.get('tol_c')
     session['numero_C'] = num_c 
-    return redirect(url_for('numc', num_c=num_c)) # chama afunção e nao a rota
+    session['tolerancia_C'] = tol_c 
+    return redirect(url_for('numc', num_c=num_c, tol_c=tol_c)) # chama afunção e nao a rota
   return render_template('CalNum.html')
 
 
 @app.route('/num_c', methods=['GET', 'POST'])
 def numc():
-  if request.args.get('num_c') != None:
+  if request.args.get('num_c') != None and request.args.get('tol_c') != None :
     num_c = request.args.get('num_c')
+    tol_c = request.args.get('tol_c')
   else:
     num_c = session.get('numero_C')
+    tol_c = session.get('tolerancia_C')
   
   num_c_int = int(num_c)
+  tol_c_float = float(tol_c)
 
   #print(f"tome tome tome{num_c}  {type(num_c_int) }")
   # Cria uma lista com números de 1 até num
@@ -53,12 +58,14 @@ def resultc():
   for stringC in lista_c_enviados:
     lista_int.append(int(stringC))
   C = session.get('numero_C')
+  TOL_C = session.get('tolerancia_C')
 
   C_int = int(C)
+  TOL_C_float = float( TOL_C )
   print(f"---------{C} -- {type(C_int)}")
   print(f"---------{lista_int} -- {type(lista_int)}")
   print(f"---------{5} -- {type(5)}")
-  resultadosLC = codigoG.mega_funcao(C_int, lista_int)
+  resultadosLC = codigoG.mega_funcao(C_int, TOL_C_float, lista_int)
 
   return render_template('resultc.html', resultadosLC=resultadosLC)
 
